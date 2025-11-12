@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px 0;
+}
+
+.container {
+    background-color: aliceblue;
+    width: min(900px, 95%);
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    padding: 12px;
+}
+
+.intro {
+  background-color: rgb(53, 43, 31);
+  color: aliceblue;
+  width: 100%;
+  text-align: center;
+  padding: 18px 12px;
+  border-radius: 8px;
+}
+
+.intro p{
+  margin-bottom: 10px;
+}
+
+.intro button {
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    font-size: 13px;
+    border: none;
+    background: #e7d0ae;
+    color: #111;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.08) inset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.box {
+    width: 100%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 18px;
+    padding: 8px 0;
+}
+
+#todo-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    cursor: pointer;
+    background-color: #e7d0ae;
+    width: 95%;
+    border-radius: 8px;
+    margin: 8px auto;
+    box-sizing: border-box;
+}
+
+.todo-app {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#todo-list li.completed span {
+    text-decoration: line-through;
+    color: #999;
+}
+#todo-list li:hover .delete-btn {
+    opacity: 1; /* Fica visível no hover */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 800px) {
+    body {
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        margin-bottom: 15px;
+        border-radius: 0;
+    }
+
+    .intro {
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .intro p {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    .intro button {
+        width: 90px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .box {
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    #todo-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    #todo-list li span {
+        word-wrap: break-word;
+        max-width: 100%;
+    }
+}

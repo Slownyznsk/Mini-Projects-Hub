@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 100px 0;
+}
+
+.container {
+    margin: 0 auto;
+    background-color: rgba(230, 230, 230, 0.671);
+    width: min(1100px, 95%);
+    max-width: 1100px;
+    height: auto; /* permitir altura fluida em dispositivos menores */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.intro {
+  background-color: rgb(53, 43, 31);
+  color: aliceblue;
+  width: 100%;
+  text-align: center;
+  padding: 24px 16px;
+  border-radius: 8px;
+}
+
+.cards {
+  background-color: aliceblue;
+  width: 100%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 16px;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+.card {
+  background-color: rgb(168, 151, 131);
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  text-align: center;
+  padding: 12px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  background-color: rgb(189, 170, 149);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  margin: 0 auto 8px auto;
+  display: block;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card p {
+  margin-top: 0;
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+/* Responsividade global para o hub */
+@media (max-width: 900px) {
+  .container { width: 95%; padding: 12px; }
+  .cards { gap: 14px; }
+  .card img { max-width: 220px; }
+  .intro { padding: 18px 12px; }
+}
+
+@media (max-width: 480px) {
+  .cards { grid-template-columns: 1fr; }
+  .card { padding: 10px; }
+  .card h3 { font-size: 1.1rem; }
+  .card p { font-size: 0.95rem; }
+}
+
+
+

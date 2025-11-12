@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px 0;
+}
+
+.container {
+    background-color: aliceblue;
+    width: min(900px, 95%);
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    padding: 12px;
+}
+
+.intro {
+  background-color: rgb(53, 43, 31);
+  color: aliceblue;
+  width: 100%;
+  text-align: center;
+  padding: 18px 12px;
+  border-radius: 8px;
+}
+
+.intro p{
+  margin-bottom: 10px;
+}
+
+.intro button {
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    font-size: 13px;
+    border: none;
+    background: #e7d0ae;
+    color: #111;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.08) inset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.box {
+    width: 100%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 12px;
+}
+
+.box button {
+    margin-top: 10px;
+}
+
+/* Memory game responsive grid */
+.memory-game {
+  width: min(520px, 95vw);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  perspective: 1000px;
+}
+
+/* make grid adapt at narrower widths */
+@media (max-width: 520px) {
+  .memory-game {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .memory-game {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.memory-card {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* mantém proporção quadrada responsiva */
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+    background-color: #e7d0ae;
+    position: absolute;
+    inset: 0; /* top/right/bottom/left = 0 */
+    border-radius: 8px;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+#reset-btn {
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 10px 18px;
+  font-weight: bold;
+}
+
+#reset-btn:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+/* Fine-tuning for very small devices */
+@media (max-width: 360px) {
+  #reset-btn { padding: 8px 14px; font-size: 16px; }
+}
+
+

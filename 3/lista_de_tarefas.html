@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="container">
+    <section class="intro">
+        <h1> Lista de Tarefas </h1>
+        <p> Aqui temos uma listagem de tarefas simples, onde as tarefas são armazenadas localmente para exibição. </p>
+        <button onclick="window.location.href='../../index.html'">⬅ Voltar ao Hub</button>
+    </section>
+    <section class="box">
+        <div class="todo-app">
+            <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="O que precisa ser feito?" autocomplete="off">
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+            <ul id="todo-list"></ul>
+    </section>
+</main>
+
+<script src="script.js"></script>    
+</body>
+</html>
